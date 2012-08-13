@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="MongoLab.js"></script>
+	</head>
+	<body>
+		<script>
+		$(function(){
+			var mongoDB = new MongoLab('4ff0c5d7e4b0e70da5f73cc2');
+
+			//list databases
+			mongoDB.listDatabases(function(data){
+				console.log('List Databases : ', data);
+			});
+
+			//list collections
+			mongoDB.listCollections('blog', function(data){
+				console.log('List Collections : ', data);
+			});
+
+			//list documents
+			mongoDB.listDocuments('blog', 'posts', function(data){
+				console.log('List Documents : ', data);
+			});
+
+			//insert documents
+			// mongoDB.insertDocuments('blog', 'posts', {JSLIBTEST : 'testing'}, function(data){
+			// 	console.log('Insert Documents : ', data);
+			// });
+
+			//delete document
+			mongoDB.deleteDocument('blog', 'posts', '50285146e4b0bd0b0bbb328a', function(data){
+				console.log('Delete Document : ', data);
+			});
+		});
+		</script>
+	</body>
+</html>
