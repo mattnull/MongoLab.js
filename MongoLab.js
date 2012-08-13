@@ -66,7 +66,7 @@ MongoLab.prototype.listDocuments = function(database, collection){
 
 	if(typeof optionalParams === 'object'){
 		for(var i in optionalParams){
-			params += '&'+i+'='+optionalParams[i];
+			params += '&'+i+'='+JSON.stringify(optionalParams[i]);
 		}
 	}
 

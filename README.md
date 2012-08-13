@@ -36,7 +36,7 @@ Usage
 	});
 
 	//delete document
-	mongoDB.deleteDocument('blog', 'posts', '5028514623526e4b0bd023523623623b0bbb328a23432', function(data){
+	mongoDB.deleteDocument('blog', 'posts', '502851432', function(data){
 		console.log('Delete Document : ', data);
 	});
 
